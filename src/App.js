@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import Sidebar from "./containers/Sidebar";
+import Mainpage from "./containers/Mainpage";
+import { Box, Stack } from "@mui/material";
+import Navbar from "./containers/Navbar";
+// import { useSelector, useDispatch } from "react-redux";
+// import { useEffect } from "react";
+// import { getUserList } from "./store/userdata/thunk";
+// import { API_STATUS } from "./util/api_helper";
 
 function App() {
+  // const loadStatus = useSelector((state) => state.userData.loadStatus);
+  // const userData = useSelector((state) => state.userData.data);
+  // const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   if (loadStatus === API_STATUS.IDLE) {
+  //     dispatch(getUserList());
+  //   }
+  //   if (loadStatus === API_STATUS.COMPLETED) {
+  //     console.log(userData, "Userdata");
+  //   }
+  // }, [loadStatus]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ backgroundColor: "#f2f2f2" }}>
+      <Navbar />
+      <Stack direction="row" spacing={2} justifyContent="space-evenly">
+        <Sidebar />
+        <Mainpage />
+      </Stack>
+    </Box>
   );
 }
 
