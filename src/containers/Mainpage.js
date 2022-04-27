@@ -2,8 +2,8 @@ import { Box, styled } from "@mui/material";
 import Home from "./Home/Home";
 
 const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "white",
-  marginTop: "30px",
+  backgroundColor: theme.palette.secondary.main,
+  marginTop: "80px",
   minHeight: "90vh",
   marginRight: "1%",
   borderRadius: "20px 20px 20px 20px",
