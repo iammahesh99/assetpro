@@ -1,21 +1,20 @@
 import { Box, styled } from "@mui/material";
 import Home from "./Home/Home";
+import { CommonWrapper } from "./CommonStyle";
 
-const MainBox = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
-  marginTop: "80px",
-  minHeight: "90vh",
-  marginRight: "1%",
-  borderRadius: "20px 20px 20px 20px",
-  boxShadow: "0px 0px 4px rgba(0,0,0,0.1),0px 1px 2px rgba(0, 0, 0, 0.1)",
-  padding: "2%",
-}));
 const Mainpage = () => {
   return (
     <Box flex={5}>
-      <MainBox>
+      <CommonWrapper
+        stylewrapper={{
+          borderRadius: "10px 10px 10px 10px",
+          padding: "2%",
+          marginRight: "1%",
+        }}
+        flex={5}
+      >
         <Home />
-      </MainBox>
+      </CommonWrapper>
     </Box>
   );
 };

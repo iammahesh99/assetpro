@@ -1,38 +1,31 @@
 import { Box, styled, Divider, Typography } from "@mui/material";
-import {
-  PermIdentityOutlined,
-  NotificationsNoneSharp,
-} from "@mui/icons-material";
-const SideBox = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
-  marginTop: "80px",
-  minHeight: "90vh",
-  borderRadius: "0px 20px 20px 0px",
-  boxShadow: "0px 0px 4px rgba(0,0,0,0.1),0px 1px 2px rgba(0, 0, 0, 0.1)",
-}));
+import { Routes } from "../util/routes";
+import { useNavigate } from "react-router-dom";
+import { CommonWrapper } from "./CommonStyle";
 
 const ListItemWrap = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "10px",
+  alignItems: "center",
   "&:hover": {
     background: theme.palette.backgoundGrad.mainGradient,
     color: theme.palette.secondary.main,
+    cursor: "pointer",
   },
 }));
 
-const topDealsData = [
-  { id: 1, content: "Home " },
-  { id: 2, content: " SME Review " },
-  { id: 3, content: "Comparision " },
-  { id: 4, content: " Performance " },
-];
-
 const SideBarItem = () => {
-  return topDealsData.map((data) => (
+  const navigate = useNavigate();
+  return Routes.map((data) => (
     <Box key={data.id}>
-      <ListItemWrap padding={2}>
-        <PermIdentityOutlined fontSize="medium" />
-        <Typography>{data.content}</Typography>
+      <ListItemWrap
+        padding={2}
+        onClick={(e) => {
+          navigate(data.path);
+        }}
+      >
+        {data.icon}
+        <Typography variant="span">{data.name}</Typography>
       </ListItemWrap>
       <Divider variant="inset" />
     </Box>
@@ -41,9 +34,14 @@ const SideBarItem = () => {
 
 const Sidebar = () => {
   return (
-    <Box flex={1}>
-      <SideBox>{SideBarItem()}</SideBox>
-    </Box>
+    <CommonWrapper
+      flex={1}
+      stylewrapper={{
+        borderRadius: "0px 10px 10px 0px",
+      }}
+    >
+      {SideBarItem()}
+    </CommonWrapper>
   );
 };
 export default Sidebar;

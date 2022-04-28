@@ -12,13 +12,16 @@ const Home = () => {
           padding: "1% 0% 2% 0%",
           display: "flex",
           justifyContent: "space-between",
-          height: "40px",
         }}
       >
         <LargeHeading variant="h5" label="Landing Page" />
         <AdvanceFilter />
       </Box>
-      <Stack direction="row" spacing={2} justifyContent="space-between">
+      <Stack
+        direction={{ laptop: "row", tablet: "column" }}
+        spacing={2}
+        justifyContent="space-between"
+      >
         <Landingpage />
         <Newsroom />
       </Stack>
