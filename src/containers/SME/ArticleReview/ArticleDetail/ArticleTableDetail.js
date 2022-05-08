@@ -22,13 +22,12 @@ const ArticleTableDetail = () => {
           <TableHead>
             <TableRow>
               <StyledTableCell>Company</StyledTableCell>
-              <StyledTableCell align="center">Title</StyledTableCell>
               <StyledTableCell align="center">Indication</StyledTableCell>
-              <StyledTableCell align="center">Newswire Sites</StyledTableCell>
+              <StyledTableCell align="center">Url</StyledTableCell>
+              <StyledTableCell align="center">Title</StyledTableCell>
+              <StyledTableCell align="center">Newswire site</StyledTableCell>
               <StyledTableCell align="center">Asset</StyledTableCell>
               <StyledTableCell align="center">Phase</StyledTableCell>
-              <StyledTableCell align="center">Scrapped Date</StyledTableCell>
-              <StyledTableCell align="center">Status</StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -38,10 +37,13 @@ const ArticleTableDetail = () => {
                   <Typography variant="span">{row.company}</Typography>
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  <Typography variant="span">{row.article_title}</Typography>
+                  <Typography variant="span">{row.indication}</Typography>
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  <Typography variant="span">{row.indication}</Typography>
+                  <Typography variant="span">{row.article_url}</Typography>
+                </StyledTableCell>
+                <StyledTableCell align="center">
+                  <Typography variant="span">{row.article_title}</Typography>
                 </StyledTableCell>
                 <StyledTableCell align="center">
                   <Typography variant="span">{row.newswire_site}</Typography>
@@ -50,13 +52,7 @@ const ArticleTableDetail = () => {
                   <Typography variant="span">{row.asset}</Typography>
                 </StyledTableCell>
                 <StyledTableCell align="center">
-                  <Typography variant="span">{row.phase}</Typography>
-                </StyledTableCell>
-                <StyledTableCell align="center">
-                  <Typography variant="span"> {row.publish_date}</Typography>
-                </StyledTableCell>
-                <StyledTableCell align="center">
-                  <Typography variant="span"> {row.status}</Typography>
+                  <Typography variant="span"> {row.phase}</Typography>
                 </StyledTableCell>
               </StyledTableRow>
             ))}

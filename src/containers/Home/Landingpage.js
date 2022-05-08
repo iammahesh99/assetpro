@@ -1,4 +1,4 @@
-import { Box, Paper, Typography, styled } from "@mui/material";
+import { Box, Paper, styled } from "@mui/material";
 import BarExample from "../Charts/BarExample";
 
 import RadarChart from "../Charts/Radar";
@@ -12,11 +12,9 @@ const Landingpage = () => {
   return (
     <Box flex={4}>
       <ChartWrap variant="outlined">
-        <Typography variant="h6"> Bar Chart</Typography>
         <BarExample />
       </ChartWrap>
       <ChartWrap variant="outlined">
-        <Typography variant="h6"> Radar Chart</Typography>
         <RadarChart />
       </ChartWrap>
     </Box>

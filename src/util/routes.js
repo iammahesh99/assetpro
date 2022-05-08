@@ -5,6 +5,7 @@ export const PRE_PROCESSING_PATH = "/pre_processing";
 export const POST_PROCESSING_PATH = "/post_processing";
 export const ARTICLE_REVIEW_PATH = "/article_review";
 export const ASSET_PROFILE_PATH = "/asset_detail";
+export const INDICATION_PATH = "/indication";
 
 export const SME_ROUTE = [
   {
@@ -28,7 +29,7 @@ export const DISTRIBUTION_ROUTE = [
   {
     id: 1,
     name: "Indication",
-    path: "",
+    path: INDICATION_PATH,
   },
   {
     id: 2,

@@ -12,10 +12,12 @@ import {
   COMPARISION_PATH,
   PERFORMANCE_PATH,
   ASSET_PROFILE_PATH,
+  INDICATION_PATH,
 } from "../util/routes";
 import Comparision from "./Comparision/Comparision";
 import Performance from "./Performance/Performance";
 import AssetProfile from "./AssetProfile/AssetProfile";
+import Indication from "./Distribution/Indication/Indication";
 
 const Mainpage = () => {
   return (
@@ -34,6 +36,7 @@ const Mainpage = () => {
           <Route path={COMPARISION_PATH} element={<Comparision />} />
           <Route path={PERFORMANCE_PATH} element={<Performance />} />
           <Route path={ASSET_PROFILE_PATH} element={<AssetProfile />} />
+          <Route path={INDICATION_PATH} element={<Indication />} />
         </Routes>
       </CommonWrapper>
     </Box>

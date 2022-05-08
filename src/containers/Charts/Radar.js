@@ -24,7 +24,7 @@ export const data = {
   labels: ["Thing 1", "Thing 2", "Thing 3", "Thing 4", "Thing 5", "Thing 6"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "",
       data: [2, 9, 3, 5, 2, 3],
       backgroundColor: "rgba(255, 99, 132, 0.2)",
       borderColor: "rgba(255, 99, 132, 1)",
@@ -44,8 +44,10 @@ const RadarChart = () => {
   return (
     <Radar
       data={data}
-      height={50}
+      height="300px"
       options={{
+        maintainAspectRatio: false,
+        responsive: true,
         onClick: handleClick,
       }}
     />

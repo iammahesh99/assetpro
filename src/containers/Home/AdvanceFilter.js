@@ -5,7 +5,7 @@ const AdvanceFilter = () => {
     <Box>
       <Fab
         size="large"
-        color="outline"
+        color="primary"
         aria-label="Advance Filter"
         sx={{
           position: "fixed",

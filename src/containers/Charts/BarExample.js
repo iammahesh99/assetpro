@@ -21,15 +21,19 @@ ChartJS.register(
 );
 
 const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  labels: [
+    "JSP191",
+    "CPX-351",
+    "Tak-569",
+    "Media7276",
+    "LAVA191",
+    "CPX-351",
+    "Tak-569",
+  ],
   datasets: [
     {
-      label: "My First dataset",
-      backgroundColor: "rgba(255,99,132,0.2)",
-      borderColor: "rgba(255,99,132,1)",
-      borderWidth: 1,
-      hoverBackgroundColor: "rgba(255,99,132,0.4)",
-      hoverBorderColor: "rgba(255,99,132,1)",
+      label: "Asset",
+      backgroundColor: "#4532f5",
       borderCapStyle: "round",
       data: [65, 59, 80, 81, 56, 55, 40],
     },
@@ -47,9 +51,10 @@ const BarExample = () => {
   return (
     <Bar
       data={data}
-      width={100}
-      height={50}
+      height="300px"
       options={{
+        maintainAspectRatio: false,
+        responsive: true,
         onClick: handleClick,
         scales: {
           x: {
