@@ -24,16 +24,18 @@ const data = {
   labels: ["January"],
   datasets: [
     {
-      label: "My First dataset",
+      label: "Efficacy",
       data: [
-        { x: 0, y: 0, r: 0 },
-        { x: 10, y: 5, r: 15 },
-        { x: 13, y: 10, r: 15 },
-        { x: 2, y: 2, r: 20 },
-        { x: 8, y: 14, r: 15 },
-        { x: 15, y: 15, r: 0 },
+        { x: 5, y: 5, r: 35 },
+        { x: 1, y: 3, r: 25 },
+        { x: 8, y: 14, r: 0 },
       ],
-      backgroundColor: "#000000",
+      backgroundColor: "#0924df",
+    },
+    {
+      label: "Safety",
+      data: [{ x: 3, y: 10, r: 35 }],
+      backgroundColor: "red",
     },
   ],
 };
@@ -42,30 +44,37 @@ const BubbleExample = () => {
   const navigate = useNavigate();
   const handleClick = (evt, element) => {
     if (element.length > 0) {
-      navigate("/comparision");
+      navigate("/asset_detail");
     }
   };
   return (
     <div>
       <Bubble
         data={data}
+        height="300px"
         options={{
+          maintainAspectRatio: false,
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: "right",
+            },
+          },
           onClick: handleClick,
           scales: {
-            xAxes: [
-              {
-                gridLines: {
-                  display: false,
-                },
+            x: {
+              grid: {
+                display: false,
               },
-            ],
-            yAxes: [
-              {
-                gridLines: {
-                  display: false,
-                },
+              beginAtZero: true,
+            },
+            y: {
+              grid: {
+                display: false,
               },
-            ],
+              beginAtZero: true,
+            },
           },
         }}
       />

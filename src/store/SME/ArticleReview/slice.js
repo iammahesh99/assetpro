@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { API_STATUS } from "../../../util/api_helper";
 import { getArticleList } from "./thunk";
+import { intialState } from "../../../api/mockdata/articleInitial";
 
 const articleSlice = createSlice({
   name: "articles",
@@ -9,7 +10,7 @@ const articleSlice = createSlice({
     data: [],
     error: "",
     complete: false,
-    selectData: [],
+    selectData: intialState,
   },
   reducers: {
     getCompleted: (state, action) => {

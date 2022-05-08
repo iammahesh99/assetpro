@@ -1,8 +1,8 @@
 import { Box, Paper, Typography, styled } from "@mui/material";
 import BarExample from "../Charts/BarExample";
-import BubbleExample from "../Charts/BubbeExample";
-//import RadarChart from "../Charts/Radar";
-const ChartWrap = styled(Paper)(({ theme }) => ({
+
+import RadarChart from "../Charts/Radar";
+export const ChartWrap = styled(Paper)(({ theme }) => ({
   background: theme.palette.secondary.main,
   padding: "0% 3% 3% 3%",
   marginBottom: "5%",
@@ -17,7 +17,7 @@ const Landingpage = () => {
       </ChartWrap>
       <ChartWrap variant="outlined">
         <Typography variant="h6"> Radar Chart</Typography>
-        <BubbleExample />
+        <RadarChart />
       </ChartWrap>
     </Box>
   );

@@ -10,8 +10,12 @@ import {
   PRE_PROCESSING_PATH,
   POST_PROCESSING_PATH,
   COMPARISION_PATH,
+  PERFORMANCE_PATH,
+  ASSET_PROFILE_PATH,
 } from "../util/routes";
 import Comparision from "./Comparision/Comparision";
+import Performance from "./Performance/Performance";
+import AssetProfile from "./AssetProfile/AssetProfile";
 
 const Mainpage = () => {
   return (
@@ -28,6 +32,8 @@ const Mainpage = () => {
           <Route path={PRE_PROCESSING_PATH} element={<PreMain />} />
           <Route path={POST_PROCESSING_PATH} element={<PostMain />} />
           <Route path={COMPARISION_PATH} element={<Comparision />} />
+          <Route path={PERFORMANCE_PATH} element={<Performance />} />
+          <Route path={ASSET_PROFILE_PATH} element={<AssetProfile />} />
         </Routes>
       </CommonWrapper>
     </Box>

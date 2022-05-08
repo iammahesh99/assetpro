@@ -1,16 +1,21 @@
-import { Select, MenuItem, Typography } from "@mui/material";
+import { Fab, Box } from "@mui/material";
+import FilterAltOffIcon from "@mui/icons-material/FilterAltOff";
 const AdvanceFilter = () => {
   return (
-    <>
-      <Select labelId="label" id="select" value="10">
-        <MenuItem value="10" dense={true} sx={{ padding: "0px" }}>
-          <Typography variant="span">Advance Filter</Typography>
-        </MenuItem>
-        <MenuItem value="20" dense>
-          <Typography variant="span">Advance Filter</Typography>
-        </MenuItem>
-      </Select>
-    </>
+    <Box>
+      <Fab
+        size="large"
+        color="outline"
+        aria-label="Advance Filter"
+        sx={{
+          position: "fixed",
+          bottom: "2rem",
+          right: "2rem",
+        }}
+      >
+        <FilterAltOffIcon />
+      </Fab>
+    </Box>
   );
 };
 export default AdvanceFilter;

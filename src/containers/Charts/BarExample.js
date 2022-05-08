@@ -52,23 +52,18 @@ const BarExample = () => {
       options={{
         onClick: handleClick,
         scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
-              ticks: {
-                fontColor: "green",
-              },
+          x: {
+            grid: {
+              display: false,
             },
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: false,
-              },
+            beginAtZero: true,
+          },
+          y: {
+            grid: {
+              display: false,
             },
-          ],
+            beginAtZero: true,
+          },
         },
       }}
     />
