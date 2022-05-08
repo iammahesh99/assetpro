@@ -9,6 +9,7 @@ export const getUserList = createAsyncThunk(
       const response = await getUserListApi();
 
       const result = await handleApiResponse(response);
+      console.log(result);
       if (result.ok) {
         return result.data;
       }

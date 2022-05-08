@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import { Typography } from "@mui/material";
 const CustomButton = ({
   size,
   startIcons,
@@ -17,24 +18,8 @@ const CustomButton = ({
       color={color}
       {...restProps}
     >
-      {label}
+      <Typography variant="body2">{label}</Typography>
     </Button>
   );
 };
 export default CustomButton;
-
-// <CustomButton variant="outlined" size="medium" label="Edit" />
-//     <CustomButton
-//       variant="contained"
-//       label="Download"
-//       endIcons={<CloudDownloadOutlinedIcon />}
-//       sx={{
-//         background:
-//           "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
-//       }}
-//     />
-//     <CustomButton
-//       variant="contained"
-//       label="Upload"
-//       endIcons={<FileUploadOutlinedIcon />}
-//     />

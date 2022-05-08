@@ -19,9 +19,8 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
   return (
-    <AppBar position="fixed" color="secondary">
+    <AppBar position="fixed" color="secondary" elevation={1}>
       <Toolbar
         sx={{
           display: "flex",

@@ -9,19 +9,15 @@ const Home = () => {
     <Box>
       <Box
         sx={{
-          padding: "1% 0% 2% 0%",
+          padding: "0% 0% 1% 0%",
           display: "flex",
           justifyContent: "space-between",
         }}
       >
-        <LargeHeading variant="h5" label="Landing Page" />
+        <LargeHeading variant="h6" label="Landing Page" />
         <AdvanceFilter />
       </Box>
-      <Stack
-        direction={{ laptop: "row", tablet: "column" }}
-        spacing={2}
-        justifyContent="space-between"
-      >
+      <Stack direction="row" spacing={2} justifyContent="space-between">
         <Landingpage />
         <Newsroom />
       </Stack>

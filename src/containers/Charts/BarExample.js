@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { useNavigate } from "react-router-dom";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -35,10 +36,43 @@ const data = {
   ],
 };
 
-class BarExample extends React.Component {
-  render() {
-    return <Bar data={data} width={100} height={50} />;
-  }
-}
+const BarExample = () => {
+  const navigate = useNavigate();
+  const handleClick = (evt, element) => {
+    if (element.length > 0) {
+      navigate("/comparision");
+    }
+  };
+
+  return (
+    <Bar
+      data={data}
+      width={100}
+      height={50}
+      options={{
+        onClick: handleClick,
+        scales: {
+          xAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+              ticks: {
+                fontColor: "green",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              gridLines: {
+                display: false,
+              },
+            },
+          ],
+        },
+      }}
+    />
+  );
+};
 
 export default BarExample;

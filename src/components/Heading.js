@@ -11,4 +11,5 @@ const HeadingWrap = styled(Typography)(({ theme }) => ({
 const LargeHeading = ({ variant, label }) => {
   return <HeadingWrap variant={variant}>{label}</HeadingWrap>;
 };
+
 export default LargeHeading;

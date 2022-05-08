@@ -1,32 +1,33 @@
 import Sidebar from "./containers/Sidebar";
 import Mainpage from "./containers/Mainpage";
-import { Box, Stack } from "@mui/material";
+import { Box, Divider, Stack } from "@mui/material";
 import Navbar from "./containers/Navbar";
 // import { useSelector, useDispatch } from "react-redux";
 // import { useEffect } from "react";
 // import { getUserList } from "./store/userdata/thunk";
 // import { API_STATUS } from "./util/api_helper";
+// import { getArticleList } from "./store/SME/ArticleReview/thunk";
 
 function App() {
-  // const loadStatus = useSelector((state) => state.userData.loadStatus);
-  // const userData = useSelector((state) => state.userData.data);
+  // const loadStatus = useSelector((state) => state.articleData.loadStatus);
+  // const userData = useSelector((state) => state.articleData.data);
   // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   if (loadStatus === API_STATUS.IDLE) {
-  //     dispatch(getUserList());
+  //     dispatch(getArticleList());
   //   }
   //   if (loadStatus === API_STATUS.COMPLETED) {
   //     console.log(userData, "Userdata");
   //   }
   // }, [loadStatus]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
-    <Box sx={{ backgroundColor: "#f2f2f2" }}>
+    <Box>
       <Navbar />
-      <Stack direction="row" spacing={2} justifyContent="space-evenly">
-        <Sidebar />
-        <Mainpage />
-      </Stack>
+      <Sidebar />
+
+      <Mainpage />
+      <Stack direction="row" spacing={3} justifyContent="space-evenly"></Stack>
     </Box>
   );
 }

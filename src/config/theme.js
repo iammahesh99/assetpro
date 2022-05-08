@@ -6,7 +6,10 @@ const theme = createTheme({
       main: "#000000",
     },
     secondary: {
-      main: "#ffffff",
+      main: "#FFFFFF",
+    },
+    outline: {
+      main: "#68BBE3",
     },
     backgoundGrad: {
       mainGradient:
@@ -18,7 +21,7 @@ const theme = createTheme({
 
   typography: {
     span: {
-      fontSize: 17,
+      fontSize: ".87rem",
     },
     h5: {},
     h6: {},
@@ -44,6 +47,11 @@ const theme = createTheme({
         root: {
           fontSize: "1rem",
         },
+      },
+    },
+    MuiButtonBase: {
+      defaultProps: {
+        disableRipple: true,
       },
     },
     MuiDivider: {

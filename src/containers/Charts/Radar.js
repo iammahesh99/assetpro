@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Chart as ChartJS,
   RadialLinearScale,
@@ -33,7 +34,22 @@ export const data = {
 };
 
 const RadarChart = () => {
-  return <Radar data={data} height={50} />;
+  const navigate = useNavigate();
+  const handleClick = (evt, element) => {
+    if (element.length > 0) {
+      navigate("/comparision");
+      console.log(element);
+    }
+  };
+  return (
+    <Radar
+      data={data}
+      height={50}
+      options={{
+        onClick: handleClick,
+      }}
+    />
+  );
 };
 
 export default RadarChart;

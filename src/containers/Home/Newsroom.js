@@ -6,7 +6,7 @@ const Newsroom = () => {
   return (
     <Box flex={2}>
       <NewsCard content={<TopDeals />} header="TOP DEALS" />
-      <NewsCard header="HOT OPPORTUNITIES" />
+      <NewsCard content={<TopDeals />} header="HOT OPPORTUNITIES" />
     </Box>
   );
 };
