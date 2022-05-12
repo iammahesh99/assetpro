@@ -1,7 +1,8 @@
-import Sidebar from "./containers/Sidebar";
 import Mainpage from "./containers/Mainpage";
-import { Box, Divider, Stack } from "@mui/material";
+import { Box } from "@mui/material";
 import Navbar from "./containers/Navbar";
+import AdvanceFilter from "./components/AdvanceFilter";
+// import KeyCloakConfig from "./config/keycloak";
 // import { useSelector, useDispatch } from "react-redux";
 // import { useEffect } from "react";
 // import { getUserList } from "./store/userdata/thunk";
@@ -21,13 +22,16 @@ function App() {
   //     console.log(userData, "Userdata");
   //   }
   // }, [loadStatus]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // console.log(KeyCloakConfig.isLoggedIn(), "login");
+  // console.log(KeyCloakConfig.getUsername(), "username");
+
   return (
     <Box>
       <Navbar />
-      <Sidebar />
 
+      <AdvanceFilter />
       <Mainpage />
-      <Stack direction="row" spacing={3} justifyContent="space-evenly"></Stack>
     </Box>
   );
 }

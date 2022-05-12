@@ -1,25 +1,29 @@
-import { Box, Divider } from "@mui/material";
-import LargeHeading from "../../../components/Heading";
-import AdvanceFilter from "../../Home/AdvanceFilter";
+import { Box, Typography } from "@mui/material";
 import IndicationHeader from "./IndicationHeader";
 import IndicationContent from "./IndicationContent";
+import { CommonWrapper, HeadingStyle } from "../../CommonStyle";
+import CustomCarousel from "../../../components/CustomCarousel";
+import { images } from "../../../api/mockdata/HomeImage";
 
 const Indication = () => {
   return (
     <Box>
-      <Box
-        sx={{
-          padding: "0px 0px 8px 0px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <LargeHeading variant="h6" label="Indication" />
-        <AdvanceFilter />
-      </Box>
-      <Divider sx={{ marginBottom: "5px" }} />
-      <IndicationHeader />
-      <IndicationContent />
+      <CustomCarousel images={images} height="200px" />
+      <HeadingStyle>
+        <Typography
+          variant="h4"
+          color="secondary"
+          sx={{
+            borderBottom: "4px solid #eba834",
+          }}
+        >
+          Indication
+        </Typography>
+      </HeadingStyle>
+      <CommonWrapper>
+        <IndicationHeader />
+        <IndicationContent />
+      </CommonWrapper>
     </Box>
   );
 };

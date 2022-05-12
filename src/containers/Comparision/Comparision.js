@@ -1,24 +1,28 @@
-import { Box, Divider } from "@mui/material";
-import AdvanceFilter from "../Home/AdvanceFilter";
-import LargeHeading from "../../components/Heading";
+import { Box, Typography } from "@mui/material";
 import ComparisionHeader from "./ComparisionHeader";
 import ComparisionTable from "./ComparisionTable";
+import { CommonWrapper, HeadingStyle } from "../CommonStyle";
+import CustomCarousel from "../../components/CustomCarousel";
+import { images } from "../../api/mockdata/HomeImage";
 const Comparision = () => {
   return (
     <Box>
-      <Box
-        sx={{
-          padding: "0% 0% 1% 0%",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <LargeHeading variant="h6" label="Comparision" />
-        <AdvanceFilter />
-      </Box>
-      <Divider variant="inset" sx={{ marginBottom: "5px" }} />
-      <ComparisionHeader />
-      <ComparisionTable />
+      <CustomCarousel images={images} height="200px" />
+      <HeadingStyle>
+        <Typography
+          variant="h4"
+          color="secondary"
+          sx={{
+            borderBottom: "4px solid #eba834",
+          }}
+        >
+          Comparision
+        </Typography>
+      </HeadingStyle>
+      <CommonWrapper>
+        <ComparisionHeader />
+        <ComparisionTable />
+      </CommonWrapper>
     </Box>
   );
 };

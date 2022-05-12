@@ -6,11 +6,9 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        marginTop: "50px",
         display: "flex",
         justifyContent: "flex-start",
         alignItems: "center",
-        marginLeft: "10%",
       }}
     >
       <SideBarItem Route={Routes} />

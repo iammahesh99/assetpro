@@ -6,13 +6,18 @@ import App from "./App";
 import theme from "./config/theme";
 import store from "./store";
 import { Provider } from "react-redux";
+//import KeyCloakConfig from "./config/keycloak";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
-    </ThemeProvider>
-  </Provider>
-);
+const renderApp = () =>
+  root.render(
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <App />
+        </Router>
+      </ThemeProvider>
+    </Provider>
+  );
+renderApp();
+//KeyCloakConfig.initKeycloak(renderApp);

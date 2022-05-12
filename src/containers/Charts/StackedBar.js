@@ -51,18 +51,22 @@ export const data = {
   datasets: [
     {
       label: "Phase 1",
-      data: [10, 10, 10, 10, 10],
-      backgroundColor: "#4532f5",
+      data: [10, 10, 10, 10, 20],
+
+      barThickness: 60,
+      backgroundColor: "#83eb34",
     },
     {
       label: "Phase 2",
-      data: [20, 20, 20, 20, 20],
-      backgroundColor: "#f58032",
+      data: [20, 10, 20, 20, 2],
+      barThickness: 60,
+      backgroundColor: "#636660",
     },
     {
       label: "Phase 3",
-      data: [30, 30, 30, 30, 30],
-      backgroundColor: "#938e8b",
+      data: [30, 15, 30, 30, 5],
+      barThickness: 60,
+      backgroundColor: "#72c0ed",
     },
   ],
 };

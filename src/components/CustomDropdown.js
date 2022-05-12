@@ -16,7 +16,9 @@ const CustomDropdown = ({ label, handleChange, data, value }) => {
         }}
         color="outline"
       >
-        <MenuItem value="">{label}</MenuItem>
+        <MenuItem value="">
+          <Typography variant="span">{label}</Typography>
+        </MenuItem>
         {data.map((item) => (
           <MenuItem value={item} key={item}>
             <Typography variant="span">{item}</Typography>

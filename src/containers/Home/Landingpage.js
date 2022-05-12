@@ -1,7 +1,6 @@
 import { Box, Paper, styled } from "@mui/material";
-import BarExample from "../Charts/BarExample";
-
-import RadarChart from "../Charts/Radar";
+import PieChart from "../Charts/PieChart";
+import StackedBar from "../Charts/StackedBar";
 export const ChartWrap = styled(Paper)(({ theme }) => ({
   background: theme.palette.secondary.main,
   padding: "0% 3% 3% 3%",
@@ -12,10 +11,10 @@ const Landingpage = () => {
   return (
     <Box flex={4}>
       <ChartWrap variant="outlined">
-        <BarExample />
+        <StackedBar />
       </ChartWrap>
-      <ChartWrap variant="outlined">
-        <RadarChart />
+      <ChartWrap variant="outlined" sx={{ height: "35%" }}>
+        <PieChart />
       </ChartWrap>
     </Box>
   );

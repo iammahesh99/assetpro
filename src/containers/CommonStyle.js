@@ -1,10 +1,12 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import TableContainer from "@mui/material/TableContainer";
 export const CommonWrapper = styled(Box)(({ theme, stylewrapper }) => ({
   backgroundColor: theme.palette.secondary.main,
   minHeight: "90vh",
+  borderRadius: "10px 10px 10px 10px",
+  padding: "1% 2% 2% 2%",
   ...stylewrapper,
 }));
 
@@ -33,4 +35,10 @@ export const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   "&& .MuiTableHead-root": {
     backgroundColor: "#68BBE3",
   },
+}));
+
+export const HeadingStyle = styled(Box)(({ theme }) => ({
+  position: "absolute",
+  top: "15%",
+  left: "3%",
 }));

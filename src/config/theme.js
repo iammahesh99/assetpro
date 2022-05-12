@@ -1,6 +1,5 @@
 import { createTheme } from "@mui/material";
-
-const theme = createTheme({
+let theme = createTheme({
   palette: {
     primary: {
       main: "#000000",
@@ -23,10 +22,11 @@ const theme = createTheme({
     span: {
       fontSize: ".87rem",
     },
-    h5: {},
-    h6: {},
     body1: {
       fontSize: 15,
+    },
+    navbarItem: {
+      fontSize: "1.06rem",
     },
   },
 
@@ -35,8 +35,8 @@ const theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
-      tablet: 600,
-      laptop: 960,
+      tablet: 768,
+      laptop: 1024,
       desktop: 1280,
       xl: 1920,
     },
@@ -73,6 +73,19 @@ const theme = createTheme({
       styleOverrides: {
         input: {
           padding: "0px 5px 0px 5px",
+        },
+      },
+    },
+  },
+});
+theme = createTheme(theme, {
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        navbarItem: {
+          [theme.breakpoints.down("laptop")]: {
+            fontSize: ".80rem",
+          },
         },
       },
     },

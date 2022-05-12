@@ -8,20 +8,30 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 const ListItemWrap = styled(ListItemButton)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
+  [theme.breakpoints.down("laptop")]: {
+    paddingLeft: "8px",
+    paddingRight: "8px",
+  },
   "&:hover": {
-    borderBottom: "2px solid",
+    borderBottom: "4px solid",
     borderColor: theme.palette.outline.main,
     cursor: "pointer",
+    backgroundColor: "#FFFFFF",
+    color: theme.palette.outline.main,
+    fontWeight: "bold",
   },
 }));
 const ListWrap = styled(List)(({ theme, style }) => ({
-  paddingTop: 0,
-  paddingBottom: 0,
   "&& .Mui-selected": {
-    borderBottom: "2px solid",
+    borderBottom: "4px solid",
     borderColor: theme.palette.outline.main,
+    color: theme.palette.outline.main,
+    fontWeight: "bold",
+    backgroundColor: "#FFFFFF",
+    "&:hover": {
+      backgroundColor: "#FFFFFF",
+    },
   },
-  "&& .MuiButtonBase-root": {},
 }));
 
 const PopperItem = (Route) => {
@@ -42,7 +52,7 @@ const PopperItem = (Route) => {
               navigate(data.path);
             }}
           >
-            <Typography variant="span">{data.name}</Typography>
+            <Typography variant="h7">{data.name}</Typography>
           </ListItemWrap>
           <Divider variant="inset" />
         </Box>
@@ -67,7 +77,6 @@ const SideBarItem = ({ Route }) => {
       {Route.map((data) => (
         <Box key={data.id} sx={{ m: 0 }}>
           <ListItemWrap
-            padding={2}
             selected={data.path === location.pathname}
             onClick={(e) => {
               if (data.otherpath.length === 0) {
@@ -79,7 +88,7 @@ const SideBarItem = ({ Route }) => {
               setPopperData(data.otherpath);
             }}
           >
-            <Typography variant="span">{data.name}</Typography>
+            <Typography variant="navbarItem">{data.name}</Typography>
             {data.otherpath.length === 0 ? null : (
               <ArrowDropDownIcon sx={{ height: ".8rem" }} />
             )}
