@@ -64,20 +64,20 @@ export const Routes = [
   },
   {
     id: 3,
-    name: "Distribution",
+    name: "Landscape",
     path: SME_REVIEW_PATH,
     otherpath: DISTRIBUTION_ROUTE,
   },
 
   {
     id: 4,
-    name: "Comparision",
+    name: " Asset Comparision",
     path: COMPARISION_PATH,
     otherpath: [],
   },
   {
     id: 5,
-    name: "Performance",
+    name: "Asset Ranking",
     path: PERFORMANCE_PATH,
     otherpath: [],
   },

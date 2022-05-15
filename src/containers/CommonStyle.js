@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import TableContainer from "@mui/material/TableContainer";
@@ -33,7 +33,7 @@ export const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
   "&& .MuiTableHead-root": {
-    backgroundColor: "#68BBE3",
+    backgroundColor: theme.palette.outline.main,
   },
 }));
 

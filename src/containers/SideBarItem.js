@@ -9,8 +9,8 @@ const ListItemWrap = styled(ListItemButton)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   [theme.breakpoints.down("laptop")]: {
-    paddingLeft: "8px",
-    paddingRight: "8px",
+    paddingLeft: "4px",
+    paddingRight: "5px",
   },
   "&:hover": {
     borderBottom: "4px solid",

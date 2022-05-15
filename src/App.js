@@ -1,7 +1,7 @@
 import Mainpage from "./containers/Mainpage";
 import { Box } from "@mui/material";
 import Navbar from "./containers/Navbar";
-import AdvanceFilter from "./components/AdvanceFilter";
+import FilterPresentationPage from "./containers/AdvanceFilter/FilterPresentationPage";
 // import KeyCloakConfig from "./config/keycloak";
 // import { useSelector, useDispatch } from "react-redux";
 // import { useEffect } from "react";
@@ -30,7 +30,7 @@ function App() {
     <Box>
       <Navbar />
 
-      <AdvanceFilter />
+      <FilterPresentationPage />
       <Mainpage />
     </Box>
   );

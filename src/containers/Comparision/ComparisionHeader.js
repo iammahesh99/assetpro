@@ -1,92 +1,80 @@
-import { Box, Typography, styled } from "@mui/material";
-import { useState } from "react";
-import CustomDropdown from "../../components/CustomDropdown";
+import { Box } from "@mui/material";
 import CustomButton from "../../components/CustomButton";
-import { Indication } from "../SME/ArticleReview/ArticleFilterProp";
-const HeadingWrap = styled(Typography)(({ theme }) => ({
-  color: theme.palette.outline.main,
-  fontWeight: "bold",
-}));
+import ModeEditOutlinedIcon from "@mui/icons-material/ModeEditOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 const ComparisionHeader = () => {
-  const [indication, setIndication] = useState("");
   return (
-    <>
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "60%",
-          }}
-        >
-          <Box>
-            <HeadingWrap variant="body2">Clinical</HeadingWrap>
-            <CustomDropdown label="Roa" data={Indication} value={indication} />
-            <CustomDropdown
-              label="Phase"
-              data={Indication}
-              value={indication}
-            />
-            <CustomDropdown
-              label="Dosing"
-              data={Indication}
-              value={indication}
-            />
-          </Box>
-          <Box>
-            <HeadingWrap variant="body2">Biological</HeadingWrap>
-            <CustomDropdown label="Moa" data={Indication} value={indication} />
-            <CustomDropdown
-              label="Modality"
-              data={Indication}
-              value={indication}
-            />
-          </Box>
-          <Box>
-            <HeadingWrap variant="body2">Comercial</HeadingWrap>
-            <CustomDropdown
-              label="Company"
-              data={Indication}
-              value={indication}
-            />
-            <CustomDropdown label="IP" data={Indication} value={indication} />
-          </Box>
-        </Box>
-        <Box sx={{ width: "30%" }}>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-            }}
-          >
-            <Box sx={{ display: "flex", justifyContent: "space-around" }}>
-              <CustomButton
-                variant="contained"
-                size="small"
-                label="Asset Performance"
-                sx={{
-                  background:
-                    "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
-                }}
-              />
-            </Box>
-            <Box sx={{ display: "flex", justifyContent: "flex-start" }}>
-              <CustomButton
-                variant="contained"
-                size="small"
-                label="Compare"
-                sx={{
-                  background:
-                    "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
-                }}
-              />
-            </Box>
-          </Box>
-        </Box>
+    <Box
+      sx={{
+        padding: "1% 0% 1% 0%",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: { laptop: "40%", tablet: "60%" },
+        }}
+      >
+        <CustomButton
+          variant="outlined"
+          size="small"
+          label="Edit"
+          color="outline"
+          startIcons={<ModeEditOutlinedIcon />}
+        />
+        <CustomButton
+          variant="outlined"
+          size="small"
+          label="Delete"
+          color="outline"
+          startIcons={<DeleteOutlineOutlinedIcon />}
+        />
+        <CustomButton
+          variant="outlined"
+          size="small"
+          label="New"
+          color="outline"
+          startIcons={<AddOutlinedIcon />}
+        />
+        <CustomButton
+          variant="outlined"
+          size="small"
+          color="outline"
+          label="Hide/Show Columns"
+        />
       </Box>
-    </>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          width: { laptop: "22%", tablet: "37%" },
+        }}
+      >
+        <CustomButton
+          variant="contained"
+          label="Asset Performance"
+          size="small"
+          sx={{
+            background:
+              "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          }}
+        />
+        <CustomButton
+          variant="contained"
+          label="Compare"
+          size="small"
+          sx={{
+            background:
+              "radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)",
+          }}
+        />
+      </Box>
+    </Box>
   );
 };
 export default ComparisionHeader;

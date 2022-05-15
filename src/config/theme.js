@@ -26,7 +26,7 @@ let theme = createTheme({
       fontSize: 15,
     },
     navbarItem: {
-      fontSize: "1.06rem",
+      fontSize: "1rem",
     },
   },
 

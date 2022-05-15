@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import PerformanceContent from "./PerformanceContent";
-import PerformanceHeader from "./PerformanceHeader";
+//import PerformanceHeader from "./PerformanceHeader";
 import { CommonWrapper } from "../CommonStyle";
 import { images } from "../../api/mockdata/HomeImage";
 import CustomCarousel from "../../components/CustomCarousel";
@@ -22,7 +22,6 @@ const Performance = () => {
         </Typography>
       </HeadingStyle>
       <CommonWrapper>
-        <PerformanceHeader />
         <PerformanceContent />
       </CommonWrapper>
     </Box>

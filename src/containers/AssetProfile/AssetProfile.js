@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import PerformanceHeader from "../Performance/PerformanceHeader";
+//import PerformanceHeader from "../Performance/PerformanceHeader";
 import ArticleDetailContent from "../SME/ArticleReview/ArticleDetail/ArticleDetailContent";
 import ArticleTableDetail from "../SME/ArticleReview/ArticleDetail/ArticleTableDetail";
 import { CommonWrapper, HeadingStyle } from "../CommonStyle";
@@ -22,7 +22,6 @@ const AssetProfile = () => {
         </Typography>
       </HeadingStyle>
       <CommonWrapper>
-        <PerformanceHeader />
         <ArticleTableDetail />
         <ArticleDetailContent />
       </CommonWrapper>
