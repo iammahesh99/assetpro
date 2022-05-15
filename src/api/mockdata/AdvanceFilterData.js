@@ -2,11 +2,13 @@ export const FilterData = [
   {
     id: 1,
     label: "Select Therepy Area",
+    writable: true,
     checkvalue: [
       {
         id: 1,
         name: "Oncology",
         checked: false,
+        writable: true,
       },
       {
         id: 2,

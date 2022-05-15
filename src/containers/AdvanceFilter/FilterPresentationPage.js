@@ -1,22 +1,25 @@
 import { Box } from "@mui/system";
 import AdvanceFilterIcon from "../../components/AdvanceFilterIcon";
 import FilterContent from "./FilterContent";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateOnClose, setPopupState } from "../../store/AdvanceFilter/slice";
 
 const FilterPresentationPage = () => {
-  const [open, setOpen] = useState(false);
-  const handleClick = () => {
-    setOpen(true);
+  const open = useSelector((state) => state.filterData.handleFilterPopup);
+  const dispatch = useDispatch();
+  const handleOpen = () => {
+    dispatch(setPopupState(true));
   };
   const handleClose = () => {
-    setOpen(false);
+    dispatch(setPopupState(false));
+    dispatch(updateOnClose());
   };
   return (
     <Box>
       {open ? (
         <FilterContent handleCloseFilter={handleClose} />
       ) : (
-        <AdvanceFilterIcon handleFilterClick={handleClick} />
+        <AdvanceFilterIcon handleFilterClick={handleOpen} />
       )}
     </Box>
   );

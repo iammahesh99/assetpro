@@ -1,10 +1,13 @@
 import { Box, Paper, styled } from "@mui/material";
-import * as React from "react";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import { useSelector, useDispatch } from "react-redux";
 import CustomButton from "../../components/CustomButton";
-import { resetFilter } from "../../store/AdvanceFilter/slice";
+import {
+  resetFilter,
+  getCurrentStateData,
+  setPopupState,
+} from "../../store/AdvanceFilter/slice";
 import { FilterAction } from "./FilterAction";
 
 const FilterWrapper = styled(Paper)(({ theme }) => ({
@@ -29,10 +32,13 @@ const ActionWrapper = styled(Box)(({ theme }) => ({
 
 const FilterContent = ({ handleCloseFilter }) => {
   const filterData = useSelector((state) => state.filterData.filterData);
-
   const dispatch = useDispatch();
   const handleReset = () => {
     dispatch(resetFilter());
+  };
+  const handleApply = () => {
+    dispatch(getCurrentStateData(filterData));
+    dispatch(setPopupState(false));
   };
 
   return (
@@ -68,6 +74,7 @@ const FilterContent = ({ handleCloseFilter }) => {
           size="medium"
           variant="contained"
           sx={{ margin: "1rem" }}
+          onClick={handleApply}
         />
       </ActionWrapper>
     </FilterWrapper>
