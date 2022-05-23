@@ -9,10 +9,12 @@ import {
   setPopupState,
 } from "../../store/AdvanceFilter/slice";
 import { FilterAction } from "./FilterAction";
+import { checkedFilterData } from "../../util/handleFilter";
+import { filterChart } from "../../store/Chart/Bullseya/slice";
 
 const FilterWrapper = styled(Paper)(({ theme }) => ({
-  position: "absolute",
-  top: "30%",
+  position: "fixed",
+  top: "10%",
   right: 0,
   minWidth: "300px",
   zIndex: 1,
@@ -39,6 +41,8 @@ const FilterContent = ({ handleCloseFilter }) => {
   const handleApply = () => {
     dispatch(getCurrentStateData(filterData));
     dispatch(setPopupState(false));
+    const currentFilterdata = checkedFilterData("Select Moa", filterData);
+    dispatch(filterChart(currentFilterdata));
   };
 
   return (

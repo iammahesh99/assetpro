@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { ChartWrap } from "../../Home/Landingpage";
+import { ChartWrap } from "../../CommonStyle";
 import StackedBar from "../../Charts/StackedBar";
 import BarExample from "../../Charts/BarExample";
 import RadarChart from "../../Charts/Radar";

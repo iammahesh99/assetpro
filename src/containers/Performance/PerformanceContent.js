@@ -1,6 +1,6 @@
 import { Paper } from "@mui/material";
 import BubbleExample from "../Charts/BubbeExample";
-import { ChartWrap } from "../Home/Landingpage";
+import { ChartWrap } from "../CommonStyle";
 import LargeHeading from "../../components/Heading";
 const PerformanceContent = () => {
   return (

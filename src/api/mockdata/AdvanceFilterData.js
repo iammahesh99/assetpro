@@ -47,7 +47,27 @@ export const FilterData = [
     checkvalue: [
       {
         id: 1,
-        name: "Oncology",
+        name: "CAR Ts",
+        checked: false,
+      },
+      {
+        id: 2,
+        name: "CAR-NK or NK cell therapies",
+        checked: false,
+      },
+      {
+        id: 3,
+        name: "Vaccine",
+        checked: false,
+      },
+      {
+        id: 4,
+        name: "mAb",
+        checked: false,
+      },
+      {
+        id: 5,
+        name: "Small molecule inhibitor",
         checked: false,
       },
     ],

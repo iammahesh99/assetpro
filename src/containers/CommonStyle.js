@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, styled, Paper } from "@mui/material";
 import TableCell, { tableCellClasses } from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import TableContainer from "@mui/material/TableContainer";
@@ -41,4 +41,9 @@ export const HeadingStyle = styled(Box)(({ theme }) => ({
   position: "absolute",
   top: "15%",
   left: "3%",
+}));
+export const ChartWrap = styled(Paper)(({ theme }) => ({
+  background: theme.palette.secondary.main,
+  padding: "0% 3% 3% 3%",
+  marginBottom: "5%",
 }));
