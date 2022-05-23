@@ -6,7 +6,7 @@ const createSeries = (seriesId, chart) => {
   // the name for display is beautified
   const seriesName = seriesId;
   // set the size, name, id and color
-  series.size(5).name(seriesName).id(seriesId);
+  series.size(5).name(seriesName).id(seriesId).color("#f58032");
 
   // configure the legend
   series.legendItem().iconType("circle").iconSize(10);
@@ -23,6 +23,7 @@ const addPoint = (item, chart) => {
   if (series == null) {
     series = createSeries(seriesId, chart);
   }
+
   // add the data into the series
   series
     .data()
@@ -46,12 +47,23 @@ export const BullSeyaChartContext = (BullseyaData) => {
   chart.xAxis().labels().fontSize(12);
 
   // set a single marker type
-  chart.markerPalette(["circle"]);
+  chart.markerPalette(["square"]);
 
   // set the chart color palette
-  chart.palette(["#f58032"]);
 
   data.forEach((vaccine) => addPoint(vaccine, chart));
+
+  var palette = anychart.theme()[0]
+    ? anychart.theme()[0].palette.items
+    : anychart.palettes.defaultPalette;
+
+  // set opacity for each color in palette
+  var gridPalette = palette.map(function (color) {
+    return anychart.color.setOpacity(color, 0.1);
+  });
+
+  // set Y-grid background
+  chart.yGrid().palette(gridPalette);
 
   // spread bullets throughout a sector
   chart.spreadValues("valueEqual");
