@@ -6,7 +6,7 @@ import App from "./App";
 import theme from "./config/theme";
 import store from "./store";
 import { Provider } from "react-redux";
-//import KeyCloakConfig from "./config/keycloak";
+import KeyCloakConfig from "./config/keycloak";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const renderApp = () =>
@@ -19,5 +19,5 @@ const renderApp = () =>
       </ThemeProvider>
     </Provider>
   );
-renderApp();
-//KeyCloakConfig.initKeycloak(renderApp);
+//renderApp();
+KeyCloakConfig.initKeycloak(renderApp);

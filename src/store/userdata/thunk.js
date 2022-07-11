@@ -7,12 +7,11 @@ export const getUserList = createAsyncThunk(
   async (_args) => {
     try {
       const response = await getUserListApi();
-
-      const result = await handleApiResponse(response);
-      console.log(result);
-      if (result.ok) {
-        return result.data;
-      }
+      const result = await response.json();
+      console.log("result", result);
+      // if (response.ok) {
+      //   return result.webscrapper_header_articles;
+      // }
     } catch (e) {
       console.log(e);
     }

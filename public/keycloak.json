@@ -1,7 +1,7 @@
 {
-  "realm": "react-client",
-  "auth-server-url": "http://keycloak-lb-new-1793117575.ap-south-1.elb.amazonaws.com/auth/",
-  "ssl-required": "none",
+  "realm": "assetpro-dev",
+  "auth-server-url": "https://keycloak.c5ailabs.com/auth/",
+  "ssl-required": "external",
   "resource": "assetpro-client",
   "public-client": true,
   "confidential-port": 0

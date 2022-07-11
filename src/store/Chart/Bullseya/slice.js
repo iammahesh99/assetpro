@@ -11,7 +11,6 @@ const bullseyaSlice = createSlice({
   reducers: {
     filterChart: (state, action) => {
       const currentFilterdata = action.payload;
-      console.log(currentFilterdata);
       state.filterValue = state.initialBullseyaData.filter((data) =>
         currentFilterdata.includes(data.Modalities)
       );

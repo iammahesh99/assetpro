@@ -33,7 +33,7 @@ const ActionWrapper = styled(Box)(({ theme }) => ({
 }));
 
 const FilterContent = ({ handleCloseFilter }) => {
-  const filterData = useSelector((state) => state.filterData.filterData);
+  const { filterData } = useSelector((state) => state.filterData);
   const dispatch = useDispatch();
   const handleReset = () => {
     dispatch(resetFilter());

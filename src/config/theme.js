@@ -8,7 +8,7 @@ let theme = createTheme({
       main: "#FFFFFF",
     },
     outline: {
-      main: "#68BBE3",
+      main: "#189AB4",
     },
     backgoundGrad: {
       mainGradient:
