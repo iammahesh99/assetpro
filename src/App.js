@@ -8,31 +8,36 @@ import KeyCloakConfig from "./config/keycloak";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserPreference } from "./store/UserPreference/thunk";
 import { API_STATUS } from "./util/api_helper";
+import LoadingPage from "./components/MiscPages/LoadingPage";
 
 function App() {
-  // console.log(KeyCloakConfig.getToken(), "token");
-
-  const loadStatus = useSelector(
-    (state) => state.userPreferenceData.loadStatus
-  );
-
-  const userStatus = useSelector(
-    (state) => state.userPreferenceData.userStatus
+  let content = <LoadingPage />;
+  const { loadStatus, userStatus } = useSelector(
+    (state) => state.userPreferenceData
   );
   const dispatch = useDispatch();
-
   useEffect(() => {
     if (loadStatus === API_STATUS.IDLE) {
       dispatch(getUserPreference(KeyCloakConfig.getToken()));
     }
   }, [loadStatus]); // eslint-disable-line react-hooks/exhaustive-deps
-  console.log(userStatus, "userStatus");
+  if (loadStatus === API_STATUS.COMPLETED) {
+    content =
+      userStatus === "Preference already added" ? (
+        <>
+          <FilterPresentationPage />
+          <Mainpage />
+        </>
+      ) : (
+        <>
+          <Onboarding />
+        </>
+      );
+  }
   return (
     <Box>
       <Navbar />
-
-      <FilterPresentationPage />
-      <Onboarding />
+      {content}
     </Box>
   );
 }

@@ -6,6 +6,8 @@ import { Badge, Box, styled, Typography, AppBar, Toolbar } from "@mui/material";
 import React from "react";
 import LargeHeading from "../components/Heading";
 import Sidebar from "./Sidebar";
+import KeyCloakConfig from "../config/keycloak";
+import { useSelector } from "react-redux";
 
 const Icons = styled(Box)(({ theme }) => ({
   display: "flex",
@@ -26,6 +28,9 @@ const UserBox = styled(Box)(({ theme }) => ({
 }));
 
 const Navbar = () => {
+  const userStatus = useSelector(
+    (state) => state.userPreferenceData.userStatus
+  );
   return (
     <AppBar position="fixed" color="secondary" elevation={1}>
       <Toolbar
@@ -38,12 +43,22 @@ const Navbar = () => {
         <LargeHeading variant="h6" label="Asset Pro" />
         <Sidebar />
         <Icons>
-          <Badge badgeContent="4" color="error">
-            <NotificationsNoneSharp fontSize="medium" />
-          </Badge>
+          {userStatus === "Preference already added" ? (
+            <Badge badgeContent="4" color="error">
+              <NotificationsNoneSharp fontSize="medium" />
+            </Badge>
+          ) : null}
           <UserBox>
             <PermIdentityOutlined fontSize="medium" />
-            <Typography variant="navbarItem">User Name</Typography>
+            <Typography variant="navbarItem">
+              {KeyCloakConfig.getUsername()}
+            </Typography>
+            <button
+              variant="navbarItem"
+              onClick={(e) => KeyCloakConfig.doLogout()}
+            >
+              Log Out
+            </button>
           </UserBox>
         </Icons>
       </Toolbar>

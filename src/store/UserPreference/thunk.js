@@ -8,6 +8,7 @@ export const getUserPreference = createAsyncThunk(
     try {
       const response = await getUserPreferenceApi(token);
       const result = await response.json();
+      console.log("dispatch")
       if (response.ok) {
         return result.value;
       }
