@@ -6,7 +6,7 @@ export const CommonWrapper = styled(Box)(({ theme, stylewrapper }) => ({
   backgroundColor: theme.palette.secondary.main,
   minHeight: "90vh",
   borderRadius: "10px 10px 10px 10px",
-  padding: "1% 2% 2% 2%",
+  padding: "2% 2% 2% 2%",
   ...stylewrapper,
 }));
 

@@ -6,14 +6,14 @@ import { useState } from "react";
 import { checkedData, dispatchAllState } from "./filterdData";
 
 const UserFilter = () => {
-  const { therepaticArea, moa, indication, phases } = useSelector(
+  const { therepaticArea, indication } = useSelector(
     (state) => state.onboardingdata
   );
   const dispatch = useDispatch();
   const [checkedTherapyArea, setcheckedTherapyArea] = useState([]);
-  const [checkedMoa, setCheckedMoa] = useState([]);
+  //const [checkedMoa, setCheckedMoa] = useState([]);
   const [checkedIndication, setCheckedIndication] = useState([]);
-  const [checkedPhases, setCheckedPhases] = useState([]);
+  //const [checkedPhases, setCheckedPhases] = useState([]);
   const handleTherapyArea = (e) => {
     const {
       target: { value },
@@ -21,31 +21,31 @@ const UserFilter = () => {
     setcheckedTherapyArea(checkedData(value, checkedTherapyArea));
     dispatchAllState(dispatch, value);
   };
-  const handleMoa = (e) => {
-    const {
-      target: { value },
-    } = e;
-    setCheckedMoa(checkedData(value, checkedMoa));
-  };
+  // const handleMoa = (e) => {
+  //   const {
+  //     target: { value },
+  //   } = e;
+  //   setCheckedMoa(checkedData(value, checkedMoa));
+  // };
   const handleIndication = (e) => {
     const {
       target: { value },
     } = e;
     setCheckedIndication(checkedData(value, checkedIndication));
   };
-  const handlePhases = (e) => {
-    const {
-      target: { value },
-    } = e;
-    setCheckedPhases(checkedData(value, checkedPhases));
-  };
+  // const handlePhases = (e) => {
+  //   const {
+  //     target: { value },
+  //   } = e;
+  //   setCheckedPhases(checkedData(value, checkedPhases));
+  // };
 
   return (
     <Box
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        width: "100%",
+        width: "55%",
       }}
     >
       <CustomCheckboxDropdown
@@ -54,24 +54,14 @@ const UserFilter = () => {
         checkedValue={checkedTherapyArea}
         label="Select Therapy Area"
       />
-      <CustomCheckboxDropdown
-        data={moa}
-        handleChange={handleMoa}
-        checkedValue={checkedMoa}
-        label="Select Moa"
-      />
+
       <CustomCheckboxDropdown
         data={indication}
         handleChange={handleIndication}
         checkedValue={checkedIndication}
         label="Select Indication"
       />
-      <CustomCheckboxDropdown
-        data={phases}
-        handleChange={handlePhases}
-        checkedValue={checkedPhases}
-        label="Select Phase"
-      />
+
       <CustomButton
         variant="outlined"
         size="small"

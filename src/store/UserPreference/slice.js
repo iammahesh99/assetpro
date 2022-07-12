@@ -15,7 +15,6 @@ const userPreferenceSlice = createSlice({
     },
     [getUserPreference.fulfilled]: (state, action) => {
       state.loadStatus = API_STATUS.COMPLETED;
-      console.log(action.payload,"action.payload")
       state.userStatus = action.payload;
     },
     [getUserPreference.rejected]: (state, action) => {

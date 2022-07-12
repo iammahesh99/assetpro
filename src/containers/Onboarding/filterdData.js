@@ -1,4 +1,4 @@
-import { getIndication, getMoa, getPhases } from "../../store/Onboarding/slice";
+import { getIndication } from "../../store/Onboarding/slice";
 
 export const checkedData = (selectedValue) => {
   let duplicateRemoved = [];
@@ -13,18 +13,12 @@ export const checkedData = (selectedValue) => {
 };
 
 export const dispatchAllState = (dispatch, value) => {
-  let moaArray = [];
   let indicationArray = [];
-  let phaseArray = [];
   value.forEach((item) => {
-    const { indication, moa, phase } = item;
-    moaArray = [...moaArray, ...moa];
+    const { indication } = item;
     indicationArray = [...indicationArray, ...indication];
-    phaseArray = [...phaseArray, ...phase];
   });
-  dispatch(getMoa(removeDuplicate(moaArray)));
   dispatch(getIndication(removeDuplicate(indicationArray)));
-  dispatch(getPhases(removeDuplicate(phaseArray)));
 };
 
 const removeDuplicate = (completeArray) => {

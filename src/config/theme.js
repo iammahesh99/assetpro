@@ -28,6 +28,9 @@ let theme = createTheme({
     navbarItem: {
       fontSize: "1rem",
     },
+    paragraph: {
+      fontSize: "1.12rem",
+    },
   },
 
   //breakpoint
@@ -52,13 +55,6 @@ let theme = createTheme({
     MuiButtonBase: {
       defaultProps: {
         disableRipple: true,
-      },
-    },
-    MuiDivider: {
-      styleOverrides: {
-        root: {
-          marginLeft: 0,
-        },
       },
     },
 
