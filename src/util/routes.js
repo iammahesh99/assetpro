@@ -58,7 +58,7 @@ export const Routes = [
   },
   {
     id: 2,
-    name: "SME Review",
+    name: "Content Management",
     path: SME_REVIEW_PATH,
     otherpath: SME_ROUTE,
   },
